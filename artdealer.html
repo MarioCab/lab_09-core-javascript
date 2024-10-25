@@ -1,40 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <title>ArtDealer :: Submission</title>
-    <meta charset="utf-8">
-    <meta name="description" content="ArtDealer allows artists to submit their art work for sale">
-    <link rel="stylesheet" href="artdealer.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="ArtDealer allows artists to submit their art work for sale"
+    />
+    <link rel="stylesheet" href="artdealer.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="artdealer.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <h1>Art Dealer</h1>
+      <h1>Art Dealer</h1>
     </header>
     <main>
-        <p>Please submit the information abou the art work you want to sell below.
-            Required information is marked with an asterisk (*).</p>
-        <form method="post" onsubmit="return prepareSummary();"
-            action="https://stu.westga.edu/~anja/cs5251/lab9/artdealer.php">
-            <input type="hidden" id="summary" name="summary" value="">
-            <label for="title">* Title: </label><input type="text" id="title" name="title"
-                placeholder="title of artwork">
-            <label for="artist">* Artist: </label><input type="text" id="artist" name="artist"
-                placeholder="name of artist">
-            <label for="year">Year: </label><input type="text" id="year" name="year" placeholder="year of completion">
-            <label for="price">* Price: </label><input type="text" id="price" name="price" placeholder="100.00">
-            <label for="description">Description: </label><textarea id="description" name="description" rows="5"
-                cols="25"></textarea>
-            <input type="submit" id="submit" value="Submit">
-        </form>
-
+      <p>
+        Please submit the information about the art work you want to sell below.
+        Required information is marked with an asterisk (*).
+      </p>
+      <form
+        method="post"
+        onsubmit="return prepareSummary();"
+        action="https://stu.westga.edu/~anja/cs5251/lab9/artdealer.php"
+      >
+        <input type="hidden" id="summary" name="summary" value="" />
+        <label for="title">* Title: </label
+        ><input
+          type="text"
+          id="title"
+          name="title"
+          placeholder="title of artwork"
+        />
+        <label for="artist">* Artist: </label
+        ><input
+          type="text"
+          id="artist"
+          name="artist"
+          placeholder="name of artist"
+        />
+        <label for="year">Year: </label
+        ><input
+          type="text"
+          id="year"
+          name="year"
+          placeholder="year of completion"
+        />
+        <label for="price">* Price: </label
+        ><input type="text" id="price" name="price" placeholder="100.00" />
+        <label for="description">Description: </label
+        ><textarea
+          id="description"
+          name="description"
+          rows="5"
+          cols="25"
+        ></textarea>
+        <input type="submit" id="submit" value="Submit" />
+      </form>
     </main>
-    <footer>
-        Copyright &copy; CS5251 Art Dealer
-    </footer>
-</body>
-
+    <footer>Copyright &copy; CS5251 Art Dealer</footer>
+  </body>
 </html>
