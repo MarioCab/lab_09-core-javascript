@@ -17,8 +17,6 @@
  * @returns {boolean} true
  */
 function prepareSummary() {
-  console.log("starting script");
-
   let data = {
     title: document.forms[0].title.value.toString(),
     artist: document.forms[0].artist.value.toString(),
@@ -26,14 +24,11 @@ function prepareSummary() {
     price: document.forms[0].price.value.toString(),
     description: document.forms[0].description.value.toString(),
   };
-  console.log("made it passed data");
 
   if (validateAndParseArtworkData(data)) {
     document.forms[0].summary.value = formatSummary(data);
-    console.log("Good data");
   } else {
     document.forms[0].summary.value = "";
-    console.log("bad data");
   }
   /*document.forms[0].summary.value = "";*/
   return true;
@@ -72,8 +67,10 @@ function validateAndParseArtworkData(artwork) {
     artwork.year = NaN;
   } else if (parseInt(artwork.year) < 0) {
     validData = false;
-  } else {
+  } else if (parseInt(artwork.year) >= 0) {
     artwork.year = parseInt(artwork.year);
+  } else {
+    validData = false;
   }
 
   if (artwork.price == "" || parseInt(artwork.price) < 0) {
@@ -81,7 +78,6 @@ function validateAndParseArtworkData(artwork) {
   } else {
     artwork.price = parseInt(artwork.price);
   }
-  console.log("made it passed validation");
 
   return validData;
 }
@@ -113,27 +109,30 @@ function formatSummary(artwork) {
   let title = artwork.title.toUpperCase();
 
   let artist =
+    "by " +
     artwork.artist.charAt(0).toUpperCase() +
     artwork.artist.slice(1).toLowerCase();
+
+  let price = "Price: " + artwork.price.toFixed(2);
+
   let yearString = "";
+
   let descriptionString = "";
 
   if (artwork.year >= 0) {
-    yearString = `<br>Year: ${artwork.year}`;
+    yearString = `Year: ${artwork.year}`;
   } else if ((artwork.year = NaN)) {
     document.getElementById("year").remove();
-    yearString = `<br>`;
+    yearString = "";
   }
 
-  if ((artwork.description = "")) {
+  if (artwork.description == "") {
     document.getElementById("description").remove();
-    descriptionString = "";
   } else {
-    descriptionString = `<br>Description: ${artwork.description}`;
+    descriptionString = `Description: ${artwork.description}`;
   }
 
-  let formattedString = `${title}<br>by ${artist}${yearString}<br>Price: ${artwork.price}${descriptionString}`;
+  let formattedString = `${title}<br>${artist}<br>${yearString}<br>${price}<br>${descriptionString}`;
 
-  console.log("made it into format");
   return formattedString;
 }
