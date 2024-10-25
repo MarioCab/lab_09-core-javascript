@@ -113,7 +113,7 @@ function formatSummary(artwork) {
     artwork.artist.charAt(0).toUpperCase() +
     artwork.artist.slice(1).toLowerCase();
 
-  let price = "Price: $" + artwork.price.toFixed(2);
+  let price = "Price: $" + (Math.round(artwork.price * 100) / 100).toFixed(2);
 
   let yearString = "";
 
