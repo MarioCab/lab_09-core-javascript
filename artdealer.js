@@ -132,6 +132,5 @@ function formatSummary(artwork) {
   let formattedString = `${title}<br>by ${artist}${yearString}<br>Price: ${artwork.price}${descriptionString}`;
 
   console.log("made it into format");
-
   return formattedString;
 }
