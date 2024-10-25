@@ -118,13 +118,15 @@ function formatSummary(artwork) {
   let yearString = "";
   let descriptionString = "";
 
-  if ((artwork.year = NaN)) {
-    yearString = "";
-  } else if (artwork.year != NaN) {
+  if (artwork.year >= 0) {
     yearString = `<br>Year: ${artwork.year}`;
+  } else if ((artwork.year = NaN)) {
+    document.getElementById("year").remove();
+    yearString = `<br>`;
   }
 
   if ((artwork.description = "")) {
+    document.getElementById("description").remove();
     descriptionString = "";
   } else {
     descriptionString = `<br>Description: ${artwork.description}`;
