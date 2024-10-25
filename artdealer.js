@@ -128,8 +128,13 @@ function formatSummary(artwork) {
 
   if (artwork.description == "") {
     document.getElementById("description").remove();
+  } else if (artwork.description.length < 100) {
+    descriptionString = `Description: ${artwork.description.substring(
+      0,
+      artwork.description.length
+    )}`;
   } else {
-    descriptionString = `Description: ${artwork.description}`;
+    descriptionString = `Description: ${artwork.description}...`;
   }
 
   let formattedString = `${title}<br>${artist}<br>${yearString}<br>${price}<br>${descriptionString}`;
