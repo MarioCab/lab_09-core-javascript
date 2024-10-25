@@ -110,23 +110,24 @@ function validateAndParseArtworkData(artwork) {
  * @returns {string} the formatted string
  */
 function formatSummary(artwork) {
-  let title = artwork.title.toLocaleUpperCase();
+  let title = artwork.title.toUpperCase();
+
   let artist =
-    artwork.artist.charAt(0).toLocaleUpperCase +
+    artwork.artist.charAt(0).toUpperCase() +
     artwork.artist.slice(1).toLowerCase();
   let yearString = "";
   let descriptionString = "";
 
   if ((artwork.year = NaN)) {
-    yearString = "<br>";
-  } else {
-    yearString = "<br>Year: ${artwork.year}";
+    yearString = "";
+  } else if (artwork.year != NaN) {
+    yearString = `<br>Year: ${artwork.year}`;
   }
 
   if ((artwork.description = "")) {
     descriptionString = "";
   } else {
-    descriptionString = "<br>Description: ${artwork.description}";
+    descriptionString = `<br>Description: ${artwork.description}`;
   }
 
   let formattedString = `${title}<br>by ${artist}${yearString}<br>Price: ${artwork.price}${descriptionString}`;
