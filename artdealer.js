@@ -76,7 +76,7 @@ function validateAndParseArtworkData(artwork) {
   if (artwork.price == "" || parseInt(artwork.price) < 0) {
     validData = false;
   } else {
-    artwork.price = parseInt(artwork.price);
+    artwork.price = parseFloat(artwork.price);
   }
 
   return validData;
@@ -113,7 +113,7 @@ function formatSummary(artwork) {
     artwork.artist.charAt(0).toUpperCase() +
     artwork.artist.slice(1).toLowerCase();
 
-  let price = "Price: " + artwork.price.toFixed(2);
+  let price = "Price: $" + artwork.price.toFixed(2);
 
   let yearString = "";
 
