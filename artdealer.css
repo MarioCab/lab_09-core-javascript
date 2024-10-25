@@ -1,0 +1,104 @@
+* {
+    box-sizing: border-box;
+}
+
+header,
+main,
+footer {
+    display: block;
+}
+
+body {
+    background-color: #3399CC;
+    color: #666666;
+    font-family: Verdana, Arial, sans-serif;
+    background-image: linear-gradient(to bottom, #3399CC, #C2E0F0, #3399CC);
+    margin-left: 12em;
+    margin-right: 12em;
+}
+
+header {
+    background-color: #000033;
+    color: #FFFFFF;
+    font-family: Georgia, serif;
+}
+
+h1 {
+    line-height: 200%;
+    background-repeat: no-repeat;
+    background-position: right;
+    padding-left: 1em;
+    height: 72px;
+    margin-bottom: 0;
+}
+
+footer {
+    font-size: .70em;
+    font-style: italic;
+    text-align: center;
+    padding: 1em;
+    background-color: #FFFFFF;
+}
+
+main {
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-bottom: 1em;
+    padding-top: 1em;
+    background-color: #FFFFFF;
+    display: block;
+}
+
+label {
+    float: left;
+    display: block;
+    width: 8em;
+    padding-right: 1em;
+}
+
+input,
+textarea {
+    display: block;
+    margin-bottom: 1em;
+    width: 20em;
+}
+
+#submit {
+    margin-left: 9.6em;
+    width: 20em;
+}
+
+@media only screen and (max-width: 1024px) {
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    main {
+        width: auto;
+        min-width: 0;
+        margin: 0;
+        box-shadow: none;
+    }
+
+    h1 {
+        margin: 0;
+    }
+
+    footer {
+        margin: 0;
+    }
+}
+
+@media only all and (max-width: 768px) {
+    h1 {
+        height: 100%;
+        font-size: 1.5em;
+        padding-left: 0.3em;
+    }
+
+    main {
+        padding: 0.1em 0.6em 0.1em 0.4em
+    }
+
+}
