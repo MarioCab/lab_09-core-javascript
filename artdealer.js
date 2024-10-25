@@ -82,6 +82,7 @@ function validateAndParseArtworkData(artwork) {
     artwork.price = parseInt(artwork.price);
   }
   console.log("made it passed validation");
+
   return validData;
 }
 
